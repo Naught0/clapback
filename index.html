@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <script src="js/notify.min.js"></script>
+    <script src="js/clap.js"></script>
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/dark.css">
+    <link rel="stylesheet" href="css/light.css">
+    <link rel="icon" type="image/png" href="img/clap.png">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>clapback - gain the edge in any conversation!</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="title">👏 clapback.</h1>
+        </div>
+        <div class="row">
+            <h5 class="u-pull-left subtitle">gain the upper-hand in any conversation.</h5>
+            <button id="btn-darkmode" class="button u-pull-right">Dark Mode</button>
+        </div>
+        <div class="row">
+            <textarea placeholder="Enter 👏 some 👏 text 👏" name="user-in" id="user-in"></textarea>
+        </div>
+        <div class="row">
+            <textarea name="user-out" readonly="true" id="user-out"></textarea>
+        </div>
+        <div class="row">
+            <button id="btn-copy" data-clipboard-target="#user-out" class="u-pull-left button-primary">Copy</button>
+            <button id="btn-clear" class="u-pull-right button">Clear</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
