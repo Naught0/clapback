@@ -12,13 +12,13 @@ $(function () {
     
     $('#btn-darkmode').click(function(){
         if (isDarkMode){
-            document.styleSheets[4].disabled = false;
+            document.styleSheets[3].disabled = false;
             this.innerHTML = "Dark Mode"
             isDarkMode = false
         }
         else{
             this.innerHTML = "Light Mode"
-            document.styleSheets[4].disabled = true;
+            document.styleSheets[3].disabled = true;
             isDarkMode = true
         }
     })
