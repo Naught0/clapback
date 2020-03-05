@@ -1,4 +1,5 @@
 $(function () {
+    /* Dark mode stuff */
     if (localStorage.getItem('darkmode') == 'true'){
         document.styleSheets[4].disabled = true;
         var isDarkMode = true;
@@ -7,15 +8,6 @@ $(function () {
         var isDarkMode = false;
     }
 
-    $('#user-in').keyup(function () {
-        $('#user-out').val(this.value.split(' ').join(' 👏 '));
-    })
-
-    $('#btn-clear').click(function() {
-        $('#user-in').val('');
-        $('#user-out').val('');
-    })
-    
     $('#btn-darkmode').click(function(){
         if (isDarkMode){
             document.styleSheets[4].disabled = false;
@@ -31,10 +23,35 @@ $(function () {
         }
     })
 
-    var clip = new ClipboardJS('#btn-copy');
+    /* Clapback stuff */
+    $('#user-in').keyup(function () {
+        $('#user-out').val(this.value.split(' ').join(' 👏 '));
+    })
+
+    $('#btn-clear').click(function() {
+        $('#user-in').val('');
+        $('#user-out').val('');
+    })
+
+    /* Sponge stuff */
+    $('#sponge-in').keyup(function() {
+        var newstr = "";
+        for (var c of this.value){
+            if (Math.floor(Math.random() * 101) > 50){
+                newstr += c.toUpperCase();
+            }
+            else{
+                newstr += c;
+            }
+        }
+        $('#sponge-out').val(newstr)
+    })
+
+    /* Clipboard JS stuff */
+    var clip = new ClipboardJS('.btn-copy');
     clip.on('success', function (e) {
-        $('#user-out').notify("Copied!", {
-            position: "right",
+        $.notify("Copied!", {
+            position: "top-right",
             className: "success",
             showAnimation: "fadeIn",
             hideAnimation: "fadeOut"
