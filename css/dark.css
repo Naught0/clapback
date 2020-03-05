@@ -4,12 +4,12 @@ html,
 .footer{
     background: var(--nord0);
     color: var(--nord5);
-    transition: 0.2s ease all;
+    transition: 0.12s ease all;
 }
 h1,h2,h3,h4,h5,h6,
 button {
     color: var(--nord5) !important;
-    transition: 0.2s ease all;
+    transition: 0.12s ease all;
     
 }
 
@@ -17,13 +17,13 @@ textarea {
     background: var(--nord1) !important;
     color: var(--nord4) !important;
     border-color: var(--nord3) !important;
-    transition: 0.2s ease all;
+    transition: 0.12s ease all;
 }
 
 .button-primary {
     background: var(--nord9) !important;
     border-color: var(--nord9) !important;
-    transition: 0.2s ease all;
+    transition: 0.12s ease all;
 }
 
 a {
