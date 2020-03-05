@@ -1,5 +1,11 @@
 $(function () {
-    var isDarkMode = false;
+    if (localStorage.getItem('darkmode') == 'true'){
+        document.styleSheets[4].disabled = true;
+        var isDarkMode = true;
+    }
+    else {
+        var isDarkMode = false;
+    }
 
     $('#user-in').keyup(function () {
         $('#user-out').val(this.value.split(' ').join(' 👏 '));
@@ -12,13 +18,15 @@ $(function () {
     
     $('#btn-darkmode').click(function(){
         if (isDarkMode){
-            document.styleSheets[3].disabled = false;
+            document.styleSheets[4].disabled = false;
             this.innerHTML = "Dark Mode"
+            localStorage.setItem('darkmode', 'false')
             isDarkMode = false
         }
         else{
             this.innerHTML = "Light Mode"
-            document.styleSheets[3].disabled = true;
+            document.styleSheets[4].disabled = true;
+            localStorage.setItem('darkmode', 'true')
             isDarkMode = true
         }
     })
@@ -27,7 +35,9 @@ $(function () {
     clip.on('success', function (e) {
         $('#user-out').notify("Copied!", {
             position: "right",
-            className: "success"
+            className: "success",
+            showAnimation: "fadeIn",
+            hideAnimation: "fadeOut"
         });
         console.info('Action:', e.action);
         console.info('Trigger:', e.trigger);

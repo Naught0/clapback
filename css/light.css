@@ -19,3 +19,12 @@ textarea {
     background: var(--nord9)!important;
     border-color: var(--nord9) !important;
 }
+
+.footer {
+    background: var(--nord5);
+    color: var(--nord2);
+}
+
+a {
+    color: var(--nord10);
+}
