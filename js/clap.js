@@ -86,6 +86,8 @@ $(function () {
 
     $('#sponge-jumble').click(function () {
         jumble();
+        clearSponge();
+        drawSponge();
     })
 
     $('.btn-copy').click(function () {
