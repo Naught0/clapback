@@ -30,6 +30,16 @@ hr {
     border-color: var(--nord1);
 }
 
+#sponge-memeify {
+    background-color: var(--nord11) !important;
+    border-color: var(--nord11) !important;
+}
+
 a {
     color: var(--nord8);
+}
+
+code {
+    background-color: var(--nord1) !important;
+    border-color: var(--nord3);
 }

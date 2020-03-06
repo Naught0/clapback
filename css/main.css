@@ -3,7 +3,7 @@
 }
 
 html {
-    padding-bottom: 4em;
+    padding-bottom: 10em;
 }
 textarea {
     width: 100%;
@@ -35,6 +35,13 @@ hr {
     height: 100%;
     width: 100%;
 }
+
+code {
+    margin: 0;
+    margin-top: 20em !important;
+    padding: 0.5em;
+}
+
 button.u-pull-right {
     margin-left: 0.5em;
 }
