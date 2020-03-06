@@ -1,5 +1,9 @@
 $(function () {
     /* SPONGEBOB PLS */
+    var impactFont = new FontFace('Impact', 'url(font/impact.ttf)');
+    impactFont.load().then((font) => {
+        document.fonts.add(font);
+    })
     var canvas = document.getElementById('sponge-img');
     var ctx = canvas.getContext('2d');
     var imageObj = new Image(640, 320);

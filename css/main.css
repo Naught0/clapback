@@ -49,15 +49,6 @@ hr {
     width: 100%;
 }
 
-code {
-    margin: 0;
-    margin-top: 20em !important;
-    padding: 0.5em;
-}
-
-button.u-pull-right {
-    margin-left: 0.5em;
-}
 button.u-pull-left {
-    margin-right: 0.5em;
+    margin-right: 0.3em;
 }
