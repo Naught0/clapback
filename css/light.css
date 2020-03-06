@@ -25,6 +25,10 @@ textarea {
     color: var(--nord2);
 }
 
+hr {
+    border-color: var(--nord4);
+}
+
 a {
     color: var(--nord10);
 }

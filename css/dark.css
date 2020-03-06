@@ -26,6 +26,10 @@ textarea {
     transition: 0.12s ease all;
 }
 
+hr {
+    border-color: var(--nord1);
+}
+
 a {
     color: var(--nord8);
 }
