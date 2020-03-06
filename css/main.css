@@ -52,3 +52,8 @@ hr {
 button.u-pull-left {
     margin-right: 0.3em;
 }
+
+textarea {
+    resize: vertical;
+    transition: unset !important;
+}
