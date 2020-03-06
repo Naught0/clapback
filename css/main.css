@@ -31,3 +31,9 @@ h5 {
     height: 100%;
     width: 100%;
 }
+button.u-pull-right {
+    margin-left: 0.5em;
+}
+button.u-pull-left {
+    margin-right: 0.5em;
+}
