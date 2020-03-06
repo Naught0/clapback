@@ -93,7 +93,7 @@ $(function () {
         
         var requestOptions = {
           method: 'POST',
-          
+          mode: 'no-cors',
           headers: myHeaders,
           body: formdata,
           redirect: 'follow'
