@@ -1,7 +1,25 @@
 $(function () {
-    /* imgflip spongebob meme id */
-    const spongeID = 102156234;
-    const memeURL = "http://api.imgflip.com/caption_image";
+    /* SPONGEBOB PLS */
+    var canvas = document.getElementById('sponge-img');
+    var ctx = canvas.getContext('2d');
+    var imageObj = new Image(640, 320);
+    imageObj.src = "img/sponge.jpg";
+    imageObj.onload = function() {
+        drawSponge();
+    }
+
+    function clearSponge() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    function drawSponge() {
+        ctx.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height,
+            0, 0, canvas.width, canvas.height);
+        ctx.font = "18pt Impact";
+        ctx.textAlign = 'center';
+        ctx.fillStyle = "#fff";
+        ctx.fillText(document.getElementById('sponge-out').value, canvas.width / 2, canvas.height - 5, 640);
+    }
+
     /* Dark mode stuff */
     if (localStorage.getItem('darkmode') == 'true') {
         document.styleSheets[4].disabled = true;
@@ -59,6 +77,7 @@ $(function () {
         //     Math.round(Math.random()) ? v.toUpperCase() : v.toLowerCase()
         // ).join(''))
         jumble();
+        drawSponge();
     }, 350));
 
     $('#sponge-jumble').click(function () {
@@ -78,30 +97,6 @@ $(function () {
     $('#sponge-clear').click(function () {
         $('#sponge-in').val('');
         $('#sponge-out').val('');
-    })
-
-    /* Memeify */
-    $('#sponge-memeify').click(function () {
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-        
-        var formdata = new FormData();
-        formdata.append("template_id", 102156234);
-        formdata.append("username", "naught0");
-        formdata.append("password", "D2UsVjf#D1JJ");
-        formdata.append("text0", $('#sponge-out').value);
-        
-        var requestOptions = {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: myHeaders,
-          body: formdata,
-          redirect: 'follow'
-        };
-        
-        fetch("https://api.imgflip.com/caption_image?template_id=&password=D2UsVjf#D1JJ#D1JJ", requestOptions)
-          .then(response => response.text())
-          .then(result => $('#sponge-meme-link').attr('href', result))
-          .catch(error => console.log('error', error));
+        drawSponge();
     })
 })
