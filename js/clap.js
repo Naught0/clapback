@@ -1,6 +1,7 @@
 $(function () {
     /* SPONGEBOB PLS */
     var fontSize = "18";
+    var fontColor = "#ffffff";
     var impactFont = new FontFace('Impact', 'url(font/impact.ttf)');
     impactFont.load().then((font) => {
         document.fonts.add(font);
@@ -21,7 +22,7 @@ $(function () {
             0, 0, canvas.width, canvas.height);
         ctx.font = `${fontSize}pt Impact`;
         ctx.textAlign = 'center';
-        ctx.fillStyle = "#fff";
+        ctx.fillStyle = fontColor;
         ctx.fillText(document.getElementById('sponge-out').value, canvas.width / 2, canvas.height - 5, 640);
     }
 
@@ -116,6 +117,12 @@ $(function () {
     $('#sponge-font-size-slider').on('input', function() {
         document.getElementById('sponge-font-size-box').value = this.value;
         fontSize = this.value;
+        clearSponge();
+        drawSponge();
+    })
+
+    $('#sponge-color').on('input', function() {
+        fontColor = this.value;
         clearSponge();
         drawSponge();
     })

@@ -65,10 +65,18 @@
             <div class="columns six">
                 <canvas id="sponge-img"></canvas>
             </div>
-            <h6 class="u-pull-right">font size</h6>
         </div>
         <div class="row">
-            <input name="sponge-font-size-slider" id="sponge-font-size-slider" step="2" class="u-pull-right" min="6" max="32" value="18" type="range">
+            <div class="columns">
+                <h6 class="u-pull-right">font size</h6>
+                <h6 class="u-pull-left">font color</h6>
+            </div>
+            <div class="columns">
+                <input name="sponge-font-size-slider" id="sponge-font-size-slider" step="2" class="u-pull-right" min="6" max="32" value="18" type="range">
+            </div>
+            <div class="columns">
+                <input value="#ffffff" id="sponge-color" type="color">
+            </div>
         </div>
         <div class="row">
             <input id="sponge-font-size-box" name="sponge-font-size-box" class="u-pull-right" type="number" value="18" min="6" max="32" step="2">
