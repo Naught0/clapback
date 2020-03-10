@@ -32,3 +32,9 @@ hr {
 a {
     color: var(--nord10);
 }
+
+#sponge-font-size-box {
+    background-color: var(--nord5);
+    border: 1px solid var(--nord0);
+    color: var(--nord1);
+}

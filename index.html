@@ -31,10 +31,10 @@
             <button id="btn-darkmode" class="button u-pull-right">Dark Mode</button>
         </div>
         <div class="row">
-            <textarea placeholder="Enter 👏 some 👏 text 👏" name="user-in" id="user-in"></textarea>
+            <textarea class="input" placeholder="Enter 👏 some 👏 text 👏" name="user-in" id="user-in"></textarea>
         </div>
         <div class="row">
-            <textarea name="user-out" readonly="true" id="user-out"></textarea>
+            <textarea class="output" name="user-out" readonly="true" id="user-out"></textarea>
         </div>
         <div class="row">
             <button data-clipboard-target="#user-out" class="u-pull-left btn-copy button-primary">Copy</button>
@@ -50,14 +50,14 @@
             <h1 class="title"><img src="img/spongebob.png" style="width: 63px;margin-bottom: -13px;"> spongebob.</h1>
         </div>
         <div class="row">
-            <h5 class="subtitle">fOr WhEn yOu haVe nO vaLiD reSpoNsE.</h5>
+            <h5 class="subtitle" class="u-pull-left">fOr WhEn yOu haVe nO vaLiD reSpoNsE.</h5>
         </div>
         <div class="row">
-            <textarea placeholder="eNtEr sOme tExT" id="sponge-in"></textarea>
+            <textarea class="input" placeholder="eNtEr sOme tExT" id="sponge-in"></textarea>
         </div>
         <div class="row">
             <div class="columns six">
-                <textarea id="sponge-out" readonly="true"></textarea>
+                <textarea class="output" id="sponge-out" readonly="true"></textarea>
                 <button type="button" data-clipboard-target="#sponge-out" class="btn-copy  u-pull-left button-primary">Copy</button>
                 <button type="button" id="sponge-jumble" class="button-primary u-pull-left">jumble</button>
                 <button type="button" id="sponge-clear" class="button">Clear</button>
@@ -65,6 +65,13 @@
             <div class="columns six">
                 <canvas id="sponge-img"></canvas>
             </div>
+            <h6 class="u-pull-right">font size</h6>
+        </div>
+        <div class="row">
+            <input name="sponge-font-size-slider" id="sponge-font-size-slider" step="2" class="u-pull-right" min="6" max="32" value="18" type="range">
+        </div>
+        <div class="row">
+            <input id="sponge-font-size-box" name="sponge-font-size-box" class="u-pull-right" type="number" value="18" min="6" max="32" step="2">
         </div>
     </div>
     <div class="footer">

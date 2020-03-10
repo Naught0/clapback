@@ -1,5 +1,6 @@
 $(function () {
     /* SPONGEBOB PLS */
+    var fontSize = "18";
     var impactFont = new FontFace('Impact', 'url(font/impact.ttf)');
     impactFont.load().then((font) => {
         document.fonts.add(font);
@@ -18,7 +19,7 @@ $(function () {
     function drawSponge() {
         ctx.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height,
             0, 0, canvas.width, canvas.height);
-        ctx.font = "18pt Impact";
+        ctx.font = `${fontSize}pt Impact`;
         ctx.textAlign = 'center';
         ctx.fillStyle = "#fff";
         ctx.fillText(document.getElementById('sponge-out').value, canvas.width / 2, canvas.height - 5, 640);
@@ -96,13 +97,26 @@ $(function () {
             showAnimation: "fadeIn",
             hideAnimation: "fadeOut",
             gap: 5,
-            position: "top-middle"
+            position: "top-center"
         })
     })
 
     $('#sponge-clear').click(function () {
         $('#sponge-in').val('');
         $('#sponge-out').val('');
+        drawSponge();
+    })
+
+    $('#sponge-font-size-box').on('input', function() {
+        document.getElementById('sponge-font-size-slider').value = this.value;
+        fontSize = this.value;
+        clearSponge();
+        drawSponge();
+    });
+    $('#sponge-font-size-slider').on('input', function() {
+        document.getElementById('sponge-font-size-box').value = this.value;
+        fontSize = this.value;
+        clearSponge();
         drawSponge();
     })
 })

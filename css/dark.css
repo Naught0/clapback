@@ -43,3 +43,10 @@ code {
     background-color: var(--nord1) !important;
     border-color: var(--nord3);
 }
+
+#sponge-font-size-box {
+    background-color: var(--nord1);
+    border: 1px solid var(--nord3) ;
+    color: var(--nord4);
+}
+
