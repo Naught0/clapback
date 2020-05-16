@@ -28,11 +28,25 @@ $(function () {
 
     /* Dark mode stuff */
     if (localStorage.getItem('darkmode') == 'true') {
-        document.styleSheets[4].disabled = true;
+        $('#lightTheme').prop('disabled', true);
         var isDarkMode = true;
     } else {
         var isDarkMode = false;
     }
+
+    $('#btn-darkmode').click(function () {
+        if (isDarkMode) {
+            $('#lightTheme').prop('disabled', false)
+            this.innerHTML = "Dark Mode"
+            localStorage.setItem('darkmode', 'false')
+            isDarkMode = false
+        } else {
+            this.innerHTML = "Light Mode"
+            $('#lightTheme').prop('disabled', true)
+            localStorage.setItem('darkmode', 'true')
+            isDarkMode = true
+        }
+    })
 
     /* Clipboard JS stuff */
     var clip = new ClipboardJS('.btn-copy');
@@ -47,20 +61,6 @@ $(function () {
         console.error('Action:', e.action);
         console.error('Trigger:', e.trigger);
     });
-
-    $('#btn-darkmode').click(function () {
-        if (isDarkMode) {
-            document.styleSheets[4].disabled = false;
-            this.innerHTML = "Dark Mode"
-            localStorage.setItem('darkmode', 'false')
-            isDarkMode = false
-        } else {
-            this.innerHTML = "Light Mode"
-            document.styleSheets[4].disabled = true;
-            localStorage.setItem('darkmode', 'true')
-            isDarkMode = true
-        }
-    })
 
     /* Clapback stuff */
     $('#user-in').keyup(function () {
