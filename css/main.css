@@ -30,7 +30,3 @@ input,
 textarea {
     border: 0 !important;
 }
-
-* {
-    box-shadow: none !important;
-}
