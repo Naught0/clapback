@@ -1,5 +1,6 @@
 html {
     transition: 0.12s;
+    scroll-behavior: smooth;
 }
 textarea {
     height: 100%;
