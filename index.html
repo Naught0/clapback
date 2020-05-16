@@ -11,82 +11,167 @@
     <script src="js/notify.min.js"></script>
     <script src="js/delay.js"></script>
     <script src="js/clap.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Calistoga|IBM+Plex+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/skeleton.css">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
     <link id="darkTheme" rel="stylesheet" href="css/dark.css">
     <link id="lightTheme" rel="stylesheet" href="css/light.css">
-    <link rel="icon" type="image/png" href="img/clap.png">
     <link rel="stylesheet" href="css/main.css">
+
+    <link rel="icon" type="image/png" href="img/clap.png">
 
     <title>Talk more good&trade; - gain the edge in any conversation!</title>
 </head>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <h1 class="title">👏 clapback.</h1>
+<body class="has-navbar-fixed-top">
+    <nav class="navbar is-dark is-fixed-top">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <img src="https://image.flaticon.com/icons/svg/1063/1063782.svg" />
+            </div>
+            <div class="navbar-item">
+                <h5 class="help">talk more good&trade;</h5>
+            </div>
+            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
-        <div class="row">
-            <h5 class="u-pull-left subtitle">gain the upper-hand in any conversation.</h5>
-            <button id="btn-darkmode" class="button u-pull-right">Dark Mode</button>
-        </div>
-        <div class="row">
-            <textarea class="input" placeholder="Enter 👏 some 👏 text 👏" name="user-in" id="user-in"></textarea>
-        </div>
-        <div class="row">
-            <textarea class="output" name="user-out" readonly="true" id="user-out"></textarea>
-        </div>
-        <div class="row">
-            <button data-clipboard-target="#user-out" class="u-pull-left btn-copy button-primary">Copy</button>
-            <button id="btn-clear" class="button">Clear</button>
+
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#clapBack">👏 clapback</a>
+                <a class="navbar-item" href="#spongeBob">🧽 spongebob</a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <button id="btn-darkmode" class="button is-small is-primary">Dark Mode</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
+    </nav>
+
+    <section class="section hero" id="clapBack">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-four-fifths">
+                        <h1 class="title">👏 clapback.</h1>
+                        <h5 class="subtitle">gain the upper-hand in any conversation.</h5>
+                    </div>
+                    <div class="column">
+                    </div>
+                </div>
+                <div class="field control">
+                    <textarea class="textarea" placeholder="Enter 👏 some 👏 text 👏" name="user-in"
+                        id="user-in"></textarea>
+
+                </div>
+                <div class="field control">
+                    <textarea class="output textarea" name="user-out" readonly="true" id="user-out"></textarea>
+                </div>
+                <div class="container">
+                    <div class="buttons">
+                        <button data-clipboard-target="#user-out" class="button is-primary btn-copy">
+                            <span class="icon"><i class="fas fa-copy"></i></span>
+                            <span>copy</span>
+                        </button>
+                        <button id="btn-clear" class="button is-danger">
+                            <span class="icon">
+                                <i class="fas fa-trash-alt"></i>
+                            </span>
+                            <span>clear</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
         <hr>
     </div>
-    <div class="container">
-        <div class="row">
-            <h1 class="title"><img src="img/spongebob.png" style="width: 63px;margin-bottom: -13px;"> spongebob.</h1>
-        </div>
-        <div class="row">
-            <h5 class="subtitle" class="u-pull-left">fOr WhEn yOu haVe nO vaLiD reSpoNsE.</h5>
-        </div>
-        <div class="row">
-            <textarea class="input" placeholder="eNtEr sOme tExT" id="sponge-in"></textarea>
-        </div>
-        <div class="row">
-            <div class="columns six">
-                <textarea class="output" id="sponge-out" readonly="true"></textarea>
-                <button type="button" data-clipboard-target="#sponge-out" class="btn-copy  u-pull-left button-primary">Copy</button>
-                <button type="button" id="sponge-jumble" class="button-primary u-pull-left">jumble</button>
-                <button type="button" id="sponge-clear" class="button">Clear</button>
+
+    <section class="section hero" id="spongeBob">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title"><img src="img/spongebob.png" style="width: 63px;margin-bottom: -13px;"> spongebob.
+                </h1>
+                <h5 class="subtitle ">fOr WhEn yOu haVe nO vaLiD reSpoNsE.</h5>
+
+                <div class="field control">
+                    <textarea class="textarea" placeholder="eNtEr sOme tExT" id="sponge-in"></textarea>
+                </div>
+
+                <div class="field control">
+                    <textarea class="output textarea" id="sponge-out" readonly="true"></textarea>
+                </div>
+
+                <div class="columns">
+                    <div class="column">
+                        <div class="buttons">
+                            <button data-clipboard-target="#sponge-out" class="btn-copy button is-primary">
+                                <span class="icon"><i class="fas fa-font"></i></span>
+                                <span>copy text</span>
+                            </button>
+
+                            <button class="button btn-copy is-info" id="spongecopyImage">
+                                <span class="icon">
+                                    <i class="fas fa-image"></i>
+                                </span>
+                                <span>copy image</span>
+                            </button>
+                            <button type="button" id="sponge-jumble" class="is-warning button">
+                                <span class="icon">
+                                    <i class="fas fa-random"></i>
+                                </span>
+                                <span>jumble</span>
+                            </button>
+                            <button type="button" id="sponge-clear" class="button is-danger">
+                                <span class="icon">
+                                    <i class="fas fa-trash-alt"></i>
+                                </span>
+                                <span>clear</span>
+                            </button>
+                        </div>
+
+                        <label for="sponge-font-size-slider" class="label">font size</label>
+                        <input name="sponge-font-size-slider" id="sponge-font-size-slider" step="2" class="" min="6"
+                            max="36" value="18" type="range">
+
+                        <input id="sponge-font-size-box" name="sponge-font-size-box" class="input" type="number"
+                            value="18" min="6" max="36" step="2">
+
+                        <label class="label">font color</label>
+                        <input value="#ffffff" id="sponge-color" class="input" type="color">
+                    </div>
+
+                    <div class="column">
+                        <figure class="image">
+                            <canvas id="sponge-img"></canvas>
+                        </figure>
+                    </div>
+                </div>
             </div>
-            <div class="columns six">
-                <canvas id="sponge-img"></canvas>
-            </div>
         </div>
-        <div class="row">
-            <div class="columns">
-                <h6 class="u-pull-right">font size</h6>
-                <h6 class="u-pull-left">font color</h6>
-            </div>
-            <div class="columns">
-                <input name="sponge-font-size-slider" id="sponge-font-size-slider" step="2" class="u-pull-right" min="6" max="32" value="18" type="range">
-            </div>
-            <div class="columns">
-                <input value="#ffffff" id="sponge-color" type="color">
-            </div>
+    </section>
+
+    <footer class="footer has-text-centered">
+        <div class="content is-small">
+            <p>
+                made by <a href="https://github.com/naught0">james</a> with ❤️
+            </p>
+            <p>
+                <a href="https://github.com/naught0/clapback">source</a>
+            </p>
+            <p>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita
+                    Golubev</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </p>
         </div>
-        <div class="row">
-            <input id="sponge-font-size-box" name="sponge-font-size-box" class="u-pull-right" type="number" value="18" min="6" max="32" step="2">
-        </div>
-    </div>
-    <div class="footer">
-        <div class="row footer-inner">
-            <span>made by <a href="https://github.com/naught0">james</a> with ❤️ and stuff from <a href="http://getskeleton.com/">skeleton</a>, <a href="https://www.nordtheme.com/">nord</a>, <a href="https://clipboardjs.com/">clipboardjs</a>, and <a href="https://notifyjs.jpillora.com/">notifyjs</a> &ndash; <a href="https://github.com/naught0/clapback">source</a></span>
-        </div>
-    </div>
+    </footer>
 </body>
 
 </html>

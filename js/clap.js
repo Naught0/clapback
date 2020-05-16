@@ -1,4 +1,14 @@
 $(function () {
+    /* nav stuff */
+    // Check for click events on the navbar burger icon
+    $(".navbar-burger").click(function () {
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        $(".navbar-burger").toggleClass("is-active");
+        $(".navbar-menu").toggleClass("is-active");
+
+    });
+
     /* SPONGEBOB PLS */
     var fontSize = "18";
     var fontColor = "#ffffff";
@@ -10,10 +20,9 @@ $(function () {
     var ctx = canvas.getContext('2d');
     var imageObj = new Image(640, 320);
     imageObj.src = "img/sponge.jpg";
-    imageObj.onload = function() {
+    imageObj.onload = function () {
         drawSponge();
     }
-
     function clearSponge() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
@@ -25,26 +34,54 @@ $(function () {
         ctx.fillStyle = fontColor;
         ctx.fillText(document.getElementById('sponge-out').value, canvas.width / 2, canvas.height - 5, 640);
     }
+    // Copy image
+    $('#spongeCopyImage').click(function () {
+        canvas.toBlob(function (blob) {
+            const item = new ClipboardItem({ 'image/png': blob })
+            navigator.clipboard.write([item]);
+        })
+    })
 
     /* Dark mode stuff */
+    function toggleButtonTheme() {
+        $('.is-light, .is-dark').toggleClass('is-light is-dark');
+    }
     if (localStorage.getItem('darkmode') == 'true') {
+        $('#btn-darkmode').html(function () {
+            return `
+            <span class="icon">
+                <i class="fas fa-sun"></i>
+            </span>
+            <span>Light mode</span>
+            `
+        })
         $('#lightTheme').prop('disabled', true);
         var isDarkMode = true;
     } else {
+        $('#btn-darkmode').html(function () {
+            return `
+            <span class="icon">
+                <i class="fas fa-moon"></i>
+            </span>
+            <span>Dark mode</span>
+            `
+        })
         var isDarkMode = false;
     }
 
     $('#btn-darkmode').click(function () {
         if (isDarkMode) {
             $('#lightTheme').prop('disabled', false)
-            this.innerHTML = "Dark Mode"
+            this.innerHTML = "<span class='icon'><i class='fas fa-moon'></i></span><span>Dark mode</span>"
             localStorage.setItem('darkmode', 'false')
             isDarkMode = false
+            toggleButtonTheme();
         } else {
-            this.innerHTML = "Light Mode"
+            this.innerHTML = "<span class='icon'><i class='fas fa-sun'></i></span><span>Light mode</span>"
             $('#lightTheme').prop('disabled', true)
             localStorage.setItem('darkmode', 'true')
             isDarkMode = true
+            toggleButtonTheme();
         }
     })
 
@@ -108,20 +145,20 @@ $(function () {
         drawSponge();
     })
 
-    $('#sponge-font-size-box').on('input', function() {
+    $('#sponge-font-size-box').on('input', function () {
         document.getElementById('sponge-font-size-slider').value = this.value;
         fontSize = this.value;
         clearSponge();
         drawSponge();
     });
-    $('#sponge-font-size-slider').on('input', function() {
+    $('#sponge-font-size-slider').on('input', function () {
         document.getElementById('sponge-font-size-box').value = this.value;
         fontSize = this.value;
         clearSponge();
         drawSponge();
     })
 
-    $('#sponge-color').on('input', function() {
+    $('#sponge-color').on('input', function () {
         fontColor = this.value;
         clearSponge();
         drawSponge();
