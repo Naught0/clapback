@@ -42,10 +42,6 @@ $(function () {
         })
     })
 
-    /* Dark mode stuff */
-    function toggleButtonTheme() {
-        $('.is-light, .is-dark').toggleClass('is-light is-dark');
-    }
     if (localStorage.getItem('darkmode') == 'true') {
         $('#btn-darkmode').html(function () {
             return `
@@ -75,13 +71,11 @@ $(function () {
             this.innerHTML = "<span class='icon'><i class='fas fa-moon'></i></span><span>Dark mode</span>"
             localStorage.setItem('darkmode', 'false')
             isDarkMode = false
-            toggleButtonTheme();
         } else {
             this.innerHTML = "<span class='icon'><i class='fas fa-sun'></i></span><span>Light mode</span>"
             $('#lightTheme').prop('disabled', true)
             localStorage.setItem('darkmode', 'true')
             isDarkMode = true
-            toggleButtonTheme();
         }
     })
 
