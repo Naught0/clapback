@@ -38,11 +38,14 @@ textarea {
 
 .emoji-picker {
     position: absolute;
-    top: 12em;
-    margin-right: 3em;
+    top: 17%;
+    left: 64.3%;
+    margin: 2em;
     z-index: 2;
-    --outline-size: 0;
     transition: opacity 0.3s ease;
+}
+emoji-picker{
+    --outline-size: 0;
 }
 
 .hidden,

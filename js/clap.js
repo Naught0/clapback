@@ -116,7 +116,7 @@ $(function () {
     );
   }
   changemoji();
-  $(".emoji-picker").draggable({ cursor: "grab" });
+  $(".emoji-picker").draggable({ cursor: "grab", handle: ".level" ,containment: "body"});
 
   $("#user-in").keyup(emojify);
   $("#changemoji").click(function () {
