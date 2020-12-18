@@ -109,7 +109,7 @@ $(function () {
     $("#user-out").val($("#user-in").val().split(" ").join(` ${emoji} `));
   }
   function changemoji() {
-    $("#changemoji .icon").text(emoji);
+    $('.emoji').text(emoji);
     $("#user-in").attr(
       "placeholder",
       "Enter some text ".split(" ").join(` ${emoji} `)
