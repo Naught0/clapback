@@ -48,10 +48,9 @@ $(function () {
   }
   // Copy image
   $("#spongeCopyImage").click(function () {
-    canvas.toBlob(function (blob) {
-      const item = new ClipboardItem({ "image/png": blob });
-      navigator.clipboard.write([item]);
-    });
+    canvas.toBlob((blob) =>
+      navigator.clipboard.write([new ClipboardItem({ "image/png": blob })])
+    );
   });
 
   if (localStorage.getItem("darkmode") == "true") {
@@ -131,7 +130,7 @@ $(function () {
       $(".emoji-picker").addClass("hidden");
     }
   });
-  
+
   document
     .querySelector("emoji-picker")
     .addEventListener("emoji-click", (e) => {
