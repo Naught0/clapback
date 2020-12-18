@@ -9,6 +9,7 @@ textarea {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    padding: 1em !important;
 }
 canvas {
     width: 100%;
@@ -29,5 +30,23 @@ textarea {
 
 input,
 textarea {
-    border: 0 !important;
+    border-radius: 0.5em !important;
+    box-shadow: 0 !important;
+    border: 0 !important; 
+}
+
+.emoji-picker {
+    position: absolute;
+    top: 12em;
+    margin-right: 3em;
+    z-index: 2;
+    --outline-size: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hidden,
+.hidden *{
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }

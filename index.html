@@ -6,13 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
     <script src="js/notify.min.js"></script>
     <script src="js/delay.js"></script>
     <script src="js/clap.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Calistoga|IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
     <link id="darkTheme" rel="stylesheet" href="css/dark.css">
@@ -20,7 +22,7 @@
     <link rel="stylesheet" href="css/main.css">
 
     <link rel="icon" type="image/png" href="img/clap.png">
-    
+
     <title>Talk more good&trade; - gain the edge in any conversation!</title>
 </head>
 
@@ -54,18 +56,38 @@
     </nav>
 
     <section class="section hero" id="clapBack">
-        <div class="hero-body">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-four-fifths">
-                        <h1 class="title">👏 clapback.</h1>
-                        <h5 class="subtitle">gain the upper-hand in any conversation.</h5>
-                    </div>
-                    <div class="column">
+        <div class="emoji-picker hidden">
+            <div class="level is-mobile has-background-dark is-paddingless is-marginless">
+                <div class="level-left"></div>
+                <div class="level-right">
+                    <div class="level-item">
+                        <button class="delete is-large"></button>
                     </div>
                 </div>
+            </div>
+            <emoji-picker></emoji-picker>
+        </div>
+        <div class="hero-body">
+            <div class="container">
+                <div class="level is-paddingless">
+                    <div class="level-left">
+                        <div class="level-item">
+                            <h1 class="title">👏 clapback.</h1>
+                        </div>
+                    </div>
+                    <div class="level-right">
+                        <div class="level-item">
+                            <button class="button" id="changemoji">
+                                <span class="icon">👏</span>
+                                <span>changemoji</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="subtitle">gain the upper-hand in any conversation.</h5>
                 <div class="field control">
-                    <textarea class="textarea" placeholder="Enter 👏 some 👏 text 👏" name="user-in"
+                    <textarea class="textarea" placeholder="Enter some text" name="user-in"
                         id="user-in"></textarea>
 
                 </div>
@@ -137,15 +159,35 @@
                             </button>
                         </div>
 
-                        <label for="sponge-font-size-slider" class="label">font size</label>
-                        <input name="sponge-font-size-slider" id="sponge-font-size-slider" step="2" class="" min="6"
-                            max="36" value="18" type="range">
 
-                        <input id="sponge-font-size-box" name="sponge-font-size-box" class="input" type="number"
-                            value="18" min="6" max="36" step="2">
+                        <div class="level is-mobile">
+                            <div class="level-left">
+                                <div class="level-item">
+                                    <div class="field">
+                                        <div class="control"><label class="label">font color</label>
+                                            <input value="#ffffff" id="sponge-color" class="input" type="color">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="level-right">
+                                <div class="level-item">
+                                    <div class="field control">
+                                        <label for="sponge-font-size-slider" class="label">font
+                                            size</label>
+                                        <input id="sponge-font-size-box" name="sponge-font-size-box" class="input"
+                                            type="number" value="18" min="6" max="36" step="2" />
+                                    </div>
+                                </div>
+                                <div class="level-item">
+                                    <div class="field control">
+                                        <input name="sponge-font-size-slider" id="sponge-font-size-slider" step="2"
+                                            class="" min="6" max="36" value="18" type="range">
+                                    </div>
+                                </div>
+                            </div>
 
-                        <label class="label">font color</label>
-                        <input value="#ffffff" id="sponge-color" class="input" type="color">
+                        </div>
                     </div>
 
                     <div class="column">
